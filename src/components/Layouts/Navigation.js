@@ -25,9 +25,9 @@ const Navigation = ({ user }) => {
           <div className="flex">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/dashboard">
-                <a>
-                  <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" />
+              <Link href="/">
+                <a className="text-3xl text-center font-extrabold uppercase text-blue-700 mb-2 lg:text-4xl">
+                  o'legit
                 </a>
               </Link>
             </div>
@@ -38,9 +38,6 @@ const Navigation = ({ user }) => {
                 href="/dashboard"
                 active={router.pathname === '/dashboard'}>
                 Dashboard
-              </NavLink>
-              <NavLink href="/visitor" active={router.pathname === '/visitor'}>
-                Visitor
               </NavLink>
             </div>
           </div>
