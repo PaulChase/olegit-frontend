@@ -7,11 +7,9 @@ import { useState } from 'react'
 const Dashboard = () => {
   const [comments, setComments] = useState([])
   const [stats, setStats] = useState({})
+
   const updateCommentStatus = (id, status) => {
-    axios
-      .put(`/api/comments/${id}`, { status })
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err))
+    axios.put(`/api/comments/${id}`, { status }).then().catch()
   }
 
   const getPendingComments = async () => {

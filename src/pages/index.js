@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
-import Input from '@/components/Input'
+
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Home() {
-  const { user } = useAuth({ middleware: 'guest' })
   const [link, setLink] = useState('')
   const [isPending, setIsPending] = useState(false)
   const router = useRouter()
@@ -23,7 +20,7 @@ export default function Home() {
       </Head>
 
       <div className="relative flex items-top justify-center min-h-screen bg-gray-50 dark:bg-gray-900 sm:items-center sm:pt-0 font-sans">
-        <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block"></div>
+        <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block" />
         <main className="flex flex-col justify-center items-center space-y-20 p-4 text-gray-800">
           <div>
             <h1 className=" text-5xl lg:text-7xl font-extrabold text-blue-700 mb-16 text-center uppercase">

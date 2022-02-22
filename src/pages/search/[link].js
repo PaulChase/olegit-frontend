@@ -53,26 +53,26 @@ export default function LinkPage({ data }) {
     e.preventDefault()
     axios
       .post('/api/comments', comment)
-      .then(res => {
+      .then(() => {
         setCommentBox(false)
         setCanComment(false)
         setComment({ ...comment, user_comment: '' })
         localStorage.setItem('commented', website.id)
         localStorage.setItem('user_name', comment.user_name)
       })
-      .catch(err => console.error(err))
+      .catch()
   }
 
   const submitVote = vote => {
     axios
       .post('/api/votes', { link_id: website.id, vote })
-      .then(res => {
-        console.log(res.data)
+      .then(() => {
+        // console.log(res.data)
         setVoteButtons(false)
         localStorage.setItem('voted', website.id)
         getWebsite()
       })
-      .catch(err => console.error(err))
+      .catch()
   }
 
   useEffect(() => {
@@ -204,7 +204,8 @@ export default function LinkPage({ data }) {
             <a
               href={link}
               className=" border border-gray-400 rounded-md text-center font-medium p-3 my-4 block focus:border-green-500 lg:mt-0"
-              target="_blank">
+              target="_blank"
+              rel="noreferrer">
               {' '}
               Visit website
             </a>
@@ -309,7 +310,8 @@ export default function LinkPage({ data }) {
                           })
                         }
                         required
-                        placeholder=" enter your comment here..."></textarea>
+                        placeholder=" enter your comment here..."
+                      />
                     </div>
                     <button
                       type="submit"
